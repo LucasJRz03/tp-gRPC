@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service MonitorServidor {
+    rpc ConsultarEstado (SolicitudVacia) returns (stream ReporteEstado);
+}
+
+message SolicitudVacia {}
+
+message ReporteEstado {
+    float cpu_uso_porcentaje = 1;
+    float ram_disponible_mb = 2;
+    float disco_disponible_gb = 3;
+}

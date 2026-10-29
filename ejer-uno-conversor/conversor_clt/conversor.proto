@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service Conversor {
+    rpc CelsiusAFahrenheit (SolicitudTemperatura) returns (RespuestaTemperatura);
+}
+
+message SolicitudTemperatura {
+    float celsius = 1;
+}
+
+message RespuestaTemperatura {
+    float fahrenheit = 1;
+}
